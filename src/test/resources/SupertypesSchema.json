@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "supertypes": [
+        "Basic",
+        "Host",
+        "Legendary",
+        "Ongoing",
+        "Snow",
+        "World"
+      ]
+    }
+  ],
+  "required": [
+    "supertypes"
+  ],
+  "properties": {
+    "supertypes": {
+      "$id": "#/properties/supertypes",
+      "type": "array",
+      "title": "The supertypes schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          "Basic",
+          "Host"
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/supertypes/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/supertypes/items/anyOf/0",
+            "type": "string",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Basic",
+              "Host"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}

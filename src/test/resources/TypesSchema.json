@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema",
+  "$id": "http://example.com/example.json",
+  "type": "object",
+  "title": "The root schema",
+  "description": "The root schema comprises the entire JSON document.",
+  "default": {},
+  "examples": [
+    {
+      "types": [
+        "Artifact",
+        "Conspiracy",
+        "Creature",
+        "Dragon",
+        "Elemental",
+        "Enchantment",
+        "Goblin",
+        "Hero",
+        "instant",
+        "Instant",
+        "Jaguar",
+        "Knights",
+        "Land",
+        "Phenomenon",
+        "Plane",
+        "Planeswalker",
+        "Scheme",
+        "Sorcery",
+        "Specter",
+        "Summon",
+        "Tribal",
+        "Vanguard",
+        "Wolf",
+        "You’ll"
+      ]
+    }
+  ],
+  "required": [
+    "types"
+  ],
+  "properties": {
+    "types": {
+      "$id": "#/properties/types",
+      "type": "array",
+      "title": "The types schema",
+      "description": "An explanation about the purpose of this instance.",
+      "default": [],
+      "examples": [
+        [
+          "Artifact",
+          "Conspiracy"
+        ]
+      ],
+      "additionalItems": true,
+      "items": {
+        "$id": "#/properties/types/items",
+        "anyOf": [
+          {
+            "$id": "#/properties/types/items/anyOf/0",
+            "type": "string",
+            "title": "The first anyOf schema",
+            "description": "An explanation about the purpose of this instance.",
+            "default": "",
+            "examples": [
+              "Artifact",
+              "Conspiracy"
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}
